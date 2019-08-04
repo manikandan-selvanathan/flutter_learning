@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 
 import 'BarcodeScan.dart';
+import 'package:flutter_training/layouts/LayoutSample.dart';
 import 'PageRedirection.dart';
+import 'layouts/ExpandedLayout.dart';
+import 'layouts/ListViewSample.dart';
 
 void main() => runApp(MyApp());
 
@@ -13,7 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: BarcodeMainPage(),
+      home: ListViewSample(),
     );
   }
 }
