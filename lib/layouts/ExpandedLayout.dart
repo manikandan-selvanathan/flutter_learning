@@ -9,8 +9,6 @@ class ExpandLayout extends StatelessWidget {
   Widget getColumn()
   {
     var view=Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
           Expanded(
             flex: 9,

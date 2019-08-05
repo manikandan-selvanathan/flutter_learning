@@ -8,19 +8,19 @@ class ListViewSample extends StatefulWidget {
 
 class _ListViewSampleState extends State<ListViewSample> {
   final _suggestions = <WordPair>[];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("ListView sample")),
-        body: createListView(context),
+      appBar: null,
+      body: createListView(context),
 
     );
   }
-  Widget createListView(BuildContext context)
-  {
-    final listview=ListView.builder(itemBuilder: (context,i )
-    {
-      if(i.isOdd) return Divider();
+
+  Widget createListView(BuildContext context) {
+    final listview = ListView.builder(itemBuilder: (context, i) {
+      if (i.isOdd) return Divider();
       final index = i ~/ 2;
       if (index >= _suggestions.length) {
         _suggestions.addAll(generateWordPairs().take(20));
@@ -31,8 +31,35 @@ class _ListViewSampleState extends State<ListViewSample> {
   }
 
   Widget _buildRow(WordPair suggestion) {
-    return new ListTile(
-      title: new Text(suggestion.asPascalCase, style: TextStyle(fontSize: 20)),
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.center,
+    children: <Widget>[
+                        Expanded
+                        (
+                          flex: 2,
+                          child:
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: ClipOval(
+                                child: Image.network(
+                                  'https://cdn.hasselblad.com/c81e7ee74fdc106a965f51b35c8dd87503a16f0e_tom-oldham-h6d-50c-sample1.jpg',
+                                  width: 50,
+                                  height: 50,
+                                  fit: BoxFit.fill,
+                                )
+                            ),
+                          )
+                        ),
+                        Expanded
+                        (
+                          flex: 8,
+                          child: Text(suggestion.asPascalCase, style: TextStyle(fontSize: 20,color: Colors.black),
+                          ),
+                        )
+    ],
     );
-  }
+
+    }
+
+
 }
