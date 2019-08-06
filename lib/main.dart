@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'LocationServiceSample.dart';
+import 'LoggerSamplePage.dart';
 
 void main() => runApp(MyApp());
 
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: LocationServiceSample(),
+      home: LoggerSamplePage(),
     );
   }
 }
