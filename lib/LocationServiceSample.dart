@@ -37,8 +37,14 @@ class _LocationServiceSampleState extends State<LocationServiceSample> {
   Future<String> GetLocation() async {
     try {
       var location2 = await _locaiton.getLocation();
-      var locationstring = location2['latitude'].toString() +"  "+ location2['longitude'].toString();
+      var locationstring = location2.latitude.toString() +"  "+ location2.longitude.toString();
       var result = "Location: $locationstring";
+
+      // _locaiton.onLocationChanged().listen((LocationData currentLocation) {
+      //   print(currentLocation.latitude);
+      //   print(currentLocation.longitude);
+      // });
+
       return result;
     } catch (e) {
       return null;

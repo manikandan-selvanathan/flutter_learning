@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_training/webview/WebViewSamplePage.dart';
 
 import 'LoggerSamplePage.dart';
 
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: LoggerSamplePage(),
+      home: WebViewSamplePage(),
     );
   }
 }
