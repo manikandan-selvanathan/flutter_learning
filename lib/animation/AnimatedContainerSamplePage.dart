@@ -20,7 +20,7 @@ class _AnimatedContainerSamplePageState extends State<AnimatedContainerSamplePag
               curve: Curves.bounceInOut,
               duration:Duration(seconds: 3)
             ),
-            RaisedButton(child: Text("Animated the Container"),
+            RaisedButton(child: Text("Animate the Container"),
             onPressed: (){
               setState(() {
                 height=100.0;
