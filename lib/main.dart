@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_training/webview/WebViewSamplePage.dart';
-
-import 'LoggerSamplePage.dart';
+import 'package:flutter_training/machinelearning/TensorFlowSampleModelPage.dart';
 
 void main() => runApp(MyApp());
 
@@ -14,7 +13,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: WebViewSamplePage(),
+      home: TensorFlowSampleModelPage(),
     );
   }
 }

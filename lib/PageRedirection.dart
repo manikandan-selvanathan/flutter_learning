@@ -10,9 +10,9 @@ class LoginPage extends StatelessWidget {
         body: Center(
             child: RaisedButton(
                 child: Text('Next'),
-                onPressed: () => {
+                onPressed: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => HomePage()))
+                      MaterialPageRoute(builder: (context) => HomePage()));
                 })));
   }
 }
@@ -27,9 +27,9 @@ class HomePage extends StatelessWidget {
       body:Center(
         child: RaisedButton(
           child: Text('Go Back'),
-          onPressed: ()=>
+          onPressed: ()
           {
-            Navigator.pop(context)
+            Navigator.pop(context);
           },
         ),
       ),

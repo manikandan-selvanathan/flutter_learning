@@ -22,7 +22,7 @@ class _LocationServiceSampleState extends State<LocationServiceSample> {
           children: <Widget>[
             RaisedButton(
                 onPressed: () {
-                  GetLocation().then((onValue) {
+                  getLocation().then((onValue) {
                     setState(() {
                       _currentLocation = onValue;
                     });
@@ -34,7 +34,7 @@ class _LocationServiceSampleState extends State<LocationServiceSample> {
         )));
   }
 
-  Future<String> GetLocation() async {
+  Future<String> getLocation() async {
     try {
       var location2 = await _locaiton.getLocation();
       var locationstring = location2.latitude.toString() +"  "+ location2.longitude.toString();
