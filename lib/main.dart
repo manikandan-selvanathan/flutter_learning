@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_training/webview/WebViewSamplePage.dart';
 import 'package:flutter_training/machinelearning/TensorFlowSampleModelPage.dart';
+import 'package:flutter_training/animation/AnimatedContainerSamplePage.dart';
 
 void main() => runApp(MyApp());
 
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: TensorFlowSampleModelPage(),
+      home: AnimatedContainerSamplePage(),
     );
   }
 }
