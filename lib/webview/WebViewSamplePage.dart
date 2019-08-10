@@ -16,7 +16,6 @@ class _WebViewSamplePageState extends State<WebViewSamplePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title:Text("WebView Sample")),
         body:
         Stack(
          children: <Widget>[

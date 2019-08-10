@@ -1,19 +1,17 @@
 import 'package:flutter/material.dart';
+import 'drawer/DrawerSamplePage.dart'; 
 
-import 'layouts/ImagesFromAssetSamplePage.dart';
+Future<void> main() async {
+  // Obtain a list of the available cameras on the device.
 
-void main() => runApp(MyApp());
 
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
+  runApp(
+    MaterialApp(
+      theme: ThemeData.dark(),
       debugShowCheckedModeBanner: false,
       title: 'Flutter Training - Manikandan Selvanathan',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: ImagesFromSamplePage(),
-    );
-  }
+      home: DrawerSamplePage()
+    ),
+  );
 }
+

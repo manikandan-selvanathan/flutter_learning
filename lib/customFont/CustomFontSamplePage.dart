@@ -8,8 +8,7 @@ class CustomFontSamplePage extends StatefulWidget {
 class _CustomFontSamplePageState extends State<CustomFontSamplePage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text("Custom Font Page")),
+    return Scaffold( 
       body: Column(
         children: <Widget>[
           Text("Normal Font Text",style: TextStyle(

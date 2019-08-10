@@ -15,9 +15,8 @@ class _LocationServiceSampleState extends State<LocationServiceSample> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: Text("Get Location Sample")),
         body: Center(
-            child: Column(
+          child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             RaisedButton(
@@ -34,18 +33,21 @@ class _LocationServiceSampleState extends State<LocationServiceSample> {
         )));
   }
 
+String GetLocationString(LocationData locationData)
+{
+    var locationstring = locationData.latitude.toString() +"  "+ locationData.longitude.toString();
+    return "Location: $locationstring";
+}
   Future<String> getLocation() async {
     try {
-      var location2 = await _locaiton.getLocation();
-      var locationstring = location2.latitude.toString() +"  "+ location2.longitude.toString();
-      var result = "Location: $locationstring";
+       var location2 = await _locaiton.getLocation();
+      _locaiton.onLocationChanged().listen((LocationData currentLocation) {
+        setState(() {
+                    _currentLocation = GetLocationString(currentLocation);
+                  });
+      });
 
-      // _locaiton.onLocationChanged().listen((LocationData currentLocation) {
-      //   print(currentLocation.latitude);
-      //   print(currentLocation.longitude);
-      // });
-
-      return result;
+      return GetLocationString(location2);
     } catch (e) {
       return null;
     }

@@ -30,6 +30,9 @@ dependencies:
   webview_flutter: ^0.3.10
   progress_indicators: ^0.1.4
   tflite: ^1.0.4
+  camera: ^0.5.3
+  path_provider: ^1.2.0
+  path:
 
 dev_dependencies:
   flutter_test:

@@ -1,27 +1,32 @@
 import 'package:flutter/material.dart';
 import 'package:barcode_scan/barcode_scan.dart';
 
-class BarcodeMainPage extends StatefulWidget {
+class BarcodeSamplePage extends StatefulWidget {
   @override
   BarcodeMainPageState createState() => BarcodeMainPageState();
 }
 
-class BarcodeMainPageState extends State<BarcodeMainPage> {
+class BarcodeMainPageState extends State<BarcodeSamplePage> {
   String result="Please scan something";
 
   Future scanQR() async {
+  try{
+      String qrResult=await BarcodeScanner.scan();
+      setState(() {
+        result=qrResult;
+      });
+  }
+  catch(e)
+  {
 
-    String qrResult=await BarcodeScanner.scan();
-    setState(() {
-      result=qrResult;
-    });
+  }
+
 
   }
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: DefaultTabController(
+    return DefaultTabController(
           length: 2,
           child: Scaffold(
             appBar: AppBar(
@@ -40,8 +45,6 @@ class BarcodeMainPageState extends State<BarcodeMainPage> {
               label: Text('Scan'),
               onPressed: scanQR,
             ),
-          )),
-
-    );
+          ));
   }
 }
