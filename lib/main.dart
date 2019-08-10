@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'customFont/CustomFontSamplePage.dart';
+import 'layouts/ImagesFromAssetSamplePage.dart';
 
 void main() => runApp(MyApp());
 
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: CustomFontSamplePage(),
+      home: ImagesFromSamplePage(),
     );
   }
 }

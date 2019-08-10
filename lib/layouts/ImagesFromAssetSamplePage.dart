@@ -1,0 +1,87 @@
+import 'dart:math';
+
+import 'package:flutter/material.dart';
+
+class ImagesFromSamplePage extends StatefulWidget {
+  @override
+  _ImagesFromSamplePageState createState() => _ImagesFromSamplePageState();
+}
+
+class _ImagesFromSamplePageState extends State<ImagesFromSamplePage> {
+  
+  String _imageSource="images/1.jpg";
+  var lastImageSource;
+
+@override
+  void initState() {
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+  //Image.network("https://images.pexels.com/photos/356378/pexels-photo-356378.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",height: 100,width: 100);
+  //Image.asset("images/1.jpg");
+  //FadeInImage.assetNetwork(placeholder: "images/loading_placeholder.png", image: "https://images.pexels.com/photos/356378/pexels-photo-356378.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500")
+
+    return Scaffold(
+      appBar: AppBar(title: Text('Image Sample')),
+      body:Center(
+        child: Column(
+          children: <Widget>[
+            Container(
+              height: 200,
+              width: 200,
+              child:Image.asset(_imageSource)
+            ),
+            RaisedButton(child: Text("Change Image"),
+              onPressed: ()
+              {
+                var rand=0;
+                var rng = new Random();
+                while(true)
+                {
+                  rand=rng.nextInt(6);
+                  if(lastImageSource!=rand)
+                  {
+                    lastImageSource=rand;
+                    break;
+                  }
+                }
+                setState(() {
+                  _imageSource=getImage(rand);
+                });
+              })
+          ],
+        ),
+      )
+    );
+  }
+
+String getImage(var i)
+{
+  switch(i)
+  {
+      case 1:
+         return "images/1.jpg";
+      break;
+      case 2:
+       return "images/2.jpg";
+      break;
+      case 3:
+        return "images/3.jpg";
+      break;
+      case 4:
+         return "images/4.jpg";
+      break;
+      case 5:
+       return "images/5.jpg";
+      break;
+      case 6:
+        return "images/6.jpg";
+      break;
+  }
+  return "images/6.jpg";
+}
+
+
+}
