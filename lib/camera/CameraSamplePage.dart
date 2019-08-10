@@ -30,13 +30,12 @@ class TakePictureScreenState extends State<CameraSamplePage> {
 
   @override
   void initState() {
-
-    initializeCamera().then((value){ 
+    initializeCamera().then((value)
+    { 
     _controller = CameraController(camera,ResolutionPreset.veryHigh);
     _initializeControllerFuture = _controller.initialize();
     });  
-
-    super.initState();
+     super.initState();
   }
 
   @override
@@ -48,10 +47,7 @@ class TakePictureScreenState extends State<CameraSamplePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      // Wait until the controller is initialized before displaying the
-      // camera preview. Use a FutureBuilder to display a loading spinner
-      // until the controller has finished initializing.
+    return Scaffold( 
       body: FutureBuilder<void>(
         future: _initializeControllerFuture,
         builder: (context, snapshot) {
