@@ -45,7 +45,7 @@ class _ListViewSampleState extends State<ListViewSample> {
                                   'https://cdn.hasselblad.com/c81e7ee74fdc106a965f51b35c8dd87503a16f0e_tom-oldham-h6d-50c-sample1.jpg',
                                   width: 50,
                                   height: 50,
-                                  fit: BoxFit.fill,
+                                  fit: BoxFit.fitHeight,
                                 )
                             ),
                           )

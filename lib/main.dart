@@ -7,7 +7,7 @@ Future<void> main() async {
 
   runApp(
     MaterialApp(
-      theme: ThemeData.dark(),
+      theme: ThemeData.light(),
       debugShowCheckedModeBanner: false,
       title: 'Flutter Training - Manikandan Selvanathan',
       home: DrawerSamplePage()
