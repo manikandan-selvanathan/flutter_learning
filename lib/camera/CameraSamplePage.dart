@@ -34,6 +34,7 @@ class TakePictureScreenState extends State<CameraSamplePage> {
     { 
     _controller = CameraController(camera,ResolutionPreset.veryHigh);
     _initializeControllerFuture = _controller.initialize();
+      super.initState();
     });  
      super.initState();
   }
