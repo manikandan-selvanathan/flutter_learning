@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_training/LocationServiceSample.dart';
+import 'package:flutter_training/LoggerSamplePage.dart';
 import 'package:flutter_training/camera/CameraSamplePage.dart';
 import 'package:flutter_training/customFont/CustomFontSamplePage.dart';
 import 'package:flutter_training/layouts/LayoutSample.dart';
@@ -36,8 +37,8 @@ class _DrawerSamplePageState extends State<DrawerSamplePage> {
        drawer: new Drawer(
         child: new Column(
           children: <Widget>[
-            Expanded(flex:2,child:UserAccountsDrawerHeader(accountName: new Text("Manikandan Selvanathan"), accountEmail: null)),
-            Expanded(flex: 8,child: createListView(context))
+            Expanded(flex:3,child:UserAccountsDrawerHeader(accountName: new Text("Manikandan Selvanathan"),currentAccountPicture: Image.network("https://media.licdn.com/dms/image/C4E03AQEaSdFe7v9KEg/profile-displayphoto-shrink_200_200/0?e=1570665600&v=beta&t=VnETy82dFHoL1iriXT4GJjodqDfVoZT4rOh8LNK15gs"), accountEmail: Text("manikandansaisai@gmail.com"))),
+            Expanded(flex: 7,child: createListView(context))
           ],
         ),
       ),
@@ -54,7 +55,7 @@ class _DrawerSamplePageState extends State<DrawerSamplePage> {
       DrawerItem("Location Service"),
       DrawerItem("Alert Dialog"),
       DrawerItem("WebView"),
-      DrawerItem("Alert Dialog"),
+      DrawerItem("Logger"),
       DrawerItem("Camera")];
     final listview = ListView.builder(itemBuilder: _buildRow,itemCount: listOfMenus.length);
     return listview;
@@ -94,9 +95,6 @@ class _DrawerSamplePageState extends State<DrawerSamplePage> {
         break;
         case 3:
               return LocationServiceSample();
-          // final cameras = await availableCameras();
-          // final firstCamera = cameras.first;
-          // return CameraSamplePage(camera: firstCamera);
         break;
         case 4:
                return ALertDialogSamplePage();
@@ -104,6 +102,13 @@ class _DrawerSamplePageState extends State<DrawerSamplePage> {
         case 5:
                return WebViewSamplePage();
         break;
+        case 6:
+               return LoggerSamplePage();
+        break;
+        case 7:
+          return CameraSamplePage();
+        break;
+         
         default:
                return WebViewSamplePage();
         break;

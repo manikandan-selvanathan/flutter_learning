@@ -11,22 +11,28 @@ class LoggerSamplePage extends StatelessWidget {
     final logger = Logger();
 
     return Scaffold(
-        appBar: AppBar(),
-        body: Center(
+        body: Center( 
             child:
-            RaisedButton(onPressed:()
-            {
-              try
-              {
-                logger.i("Button Clicked");
-                throw new Exception("Sample Exception");
-              }
-              catch(e)
-              {
-                logger.e(e.toString());
-              }
-            },
-                child: Text("Log Message"))
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: <Widget>[
+                RaisedButton(onPressed:()
+                {
+                  try
+                  {
+                    logger.i("Button Clicked");
+                    throw new Exception("Sample Exception");
+                  }
+                  catch(e)
+                  {
+                    logger.e(e.toString());
+                  }
+                },
+                child: Text("Log Message")),
+                Text("See the logs in Debug Consold - Visual studio code") 
+              ],
+            )
         )
     );
   }

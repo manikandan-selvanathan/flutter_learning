@@ -9,7 +9,10 @@ class _CustomFontSamplePageState extends State<CustomFontSamplePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold( 
-      body: Column(
+      body: Center(
+        child:Column(
+           mainAxisAlignment: MainAxisAlignment.center,
+           crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
           Text("Normal Font Text",style: TextStyle(
             fontSize: 20
@@ -20,7 +23,7 @@ class _CustomFontSamplePageState extends State<CustomFontSamplePage> {
           ),)
         ],
       ),
-    );
+    ));
   }
 }
     
