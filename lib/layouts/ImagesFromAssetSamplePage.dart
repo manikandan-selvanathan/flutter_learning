@@ -36,11 +36,12 @@ class _ImagesFromSamplePageState extends State<ImagesFromSamplePage> {
             RaisedButton(child: Text("Change Image"),
               onPressed: ()
               {
-                var rand=0;
+                var rand=1;
                 var rng = new Random();
                 while(true)
                 {
-                  rand=rng.nextInt(6);
+                  var minmax=6 + 1 - 1;
+                  rand=rng.nextInt(minmax) + 1;
                   if(lastImageSource!=rand)
                   {
                     lastImageSource=rand;
@@ -48,40 +49,13 @@ class _ImagesFromSamplePageState extends State<ImagesFromSamplePage> {
                   }
                 }
                 setState(() {
-                  _imageSource=getImage(rand);
+                  _imageSource="images/"+rand.toString()+".jpg";
                 });
-              })
+              }),
+            FadeInImage.assetNetwork( height: 250,width: 250, placeholder: "images/loading_placeholder.png", image: "https://images.pexels.com/photos/356378/pexels-photo-356378.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500")
           ],
         ),
       )
     );
   }
-
-String getImage(var i)
-{
-  switch(i)
-  {
-      case 1:
-         return "images/1.jpg";
-      break;
-      case 2:
-       return "images/2.jpg";
-      break;
-      case 3:
-        return "images/3.jpg";
-      break;
-      case 4:
-         return "images/4.jpg";
-      break;
-      case 5:
-       return "images/5.jpg";
-      break;
-      case 6:
-        return "images/6.jpg";
-      break;
-  }
-  return "images/6.jpg";
-}
-
-
 }
