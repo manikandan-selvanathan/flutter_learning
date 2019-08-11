@@ -21,11 +21,10 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text('HomePage'),
       ),
-      body:Center(
+      body: Center(
         child: RaisedButton(
           child: Text('Go Back'),
-          onPressed: ()
-          {
+          onPressed: () {
             Navigator.pop(context);
           },
         ),

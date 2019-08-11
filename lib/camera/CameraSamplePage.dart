@@ -8,8 +8,7 @@ import 'package:path_provider/path_provider.dart';
 
 // A screen that allows users to take a picture using a given camera.
 class CameraSamplePage extends StatefulWidget {
-  
- const CameraSamplePage({
+  const CameraSamplePage({
     Key key,
   }) : super(key: key);
 
@@ -22,33 +21,30 @@ class TakePictureScreenState extends State<CameraSamplePage> {
   Future<void> _initializeControllerFuture;
   CameraDescription camera;
 
-  initializeCamera() async
-      {
-            final cameras = await availableCameras();
-            camera = cameras.first;
-      }
-
-  @override
-  void initState() {
-    initializeCamera().then((value)
-    { 
-      _controller = CameraController(camera,ResolutionPreset.veryHigh);
-      _initializeControllerFuture = _controller.initialize();
-      super.initState();
-    });  
-     super.initState();
+  initializeCamera() async {
+    final cameras = await availableCameras();
+    camera = cameras.first;
   }
 
   @override
-  void dispose() 
-  {
+  void initState() {
+    initializeCamera().then((value) {
+      _controller = CameraController(camera, ResolutionPreset.veryHigh);
+      _initializeControllerFuture = _controller.initialize();
+      super.initState();
+    });
+    super.initState();
+  }
+
+  @override
+  void dispose() {
     _controller.dispose();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold( 
+    return Scaffold(
       body: FutureBuilder<void>(
         future: _initializeControllerFuture,
         builder: (context, snapshot) {

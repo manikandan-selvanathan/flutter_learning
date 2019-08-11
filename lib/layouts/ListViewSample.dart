@@ -14,7 +14,6 @@ class _ListViewSampleState extends State<ListViewSample> {
     return Scaffold(
       appBar: null,
       body: createListView(context),
-
     );
   }
 
@@ -33,33 +32,27 @@ class _ListViewSampleState extends State<ListViewSample> {
   Widget _buildRow(WordPair suggestion) {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.center,
-    children: <Widget>[
-                        Expanded
-                        (
-                          flex: 2,
-                          child:
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: ClipOval(
-                                child: Image.network(
-                                  'https://cdn.hasselblad.com/c81e7ee74fdc106a965f51b35c8dd87503a16f0e_tom-oldham-h6d-50c-sample1.jpg',
-                                  width: 50,
-                                  height: 50,
-                                  fit: BoxFit.fitHeight,
-                                )
-                            ),
-                          )
-                        ),
-                        Expanded
-                        (
-                          flex: 8,
-                          child: Text(suggestion.asPascalCase, style: TextStyle(fontSize: 20,color: Colors.black),
-                          ),
-                        )
-    ],
+      children: <Widget>[
+        Expanded(
+            flex: 2,
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: ClipOval(
+                  child: Image.network(
+                'https://cdn.hasselblad.com/c81e7ee74fdc106a965f51b35c8dd87503a16f0e_tom-oldham-h6d-50c-sample1.jpg',
+                width: 50,
+                height: 50,
+                fit: BoxFit.fitHeight,
+              )),
+            )),
+        Expanded(
+          flex: 8,
+          child: Text(
+            suggestion.asPascalCase,
+            style: TextStyle(fontSize: 20, color: Colors.black),
+          ),
+        )
+      ],
     );
-
-    }
-
-
+  }
 }

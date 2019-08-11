@@ -6,24 +6,23 @@ class ExpandLayout extends StatelessWidget {
     return getColumn();
   }
 
-  Widget getColumn()
-  {
-    var view=Column(
-        children: <Widget>[
-          Expanded(
-            flex: 9,
-            child: Container(
-              color: Colors.blue,
-            ),
+  Widget getColumn() {
+    var view = Column(
+      children: <Widget>[
+        Expanded(
+          flex: 9,
+          child: Container(
+            color: Colors.blue,
           ),
-          Expanded(
-            flex: 1,
-            child: Container(
-              color: Colors.red,
-              height: 30,
-            ),
-          )
-        ],
+        ),
+        Expanded(
+          flex: 1,
+          child: Container(
+            color: Colors.red,
+            height: 30,
+          ),
+        )
+      ],
     );
     return view;
   }

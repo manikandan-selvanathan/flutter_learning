@@ -18,36 +18,32 @@ class _LocationServiceSampleState extends State<LocationServiceSample> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: Center(
-          child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            RaisedButton(
-                onPressed: () {
-                  getLocationString().then((onValue) {
-                    setState(() {
-                      _currentLocation = onValue;
-                    });
-                  });
-                },
-                child: Text("Get Location")),
-            Text(_currentLocation, style: TextStyle(fontSize: 15))
-          ],
-        )));
+            child: Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        RaisedButton(
+            onPressed: () {
+              getLocationString().then((onValue) {
+                setState(() {
+                  _currentLocation = onValue;
+                });
+              });
+            },
+            child: Text("Get Location")),
+        Text(_currentLocation, style: TextStyle(fontSize: 15))
+      ],
+    )));
   }
 
-  getLocationString() async
-  {
-    try
-    {
-      FlutterTrainingHelper flutterTrainingHelper=new FlutterTrainingHelper();
-      var location=await flutterTrainingHelper.getLocation();
-      var locationstring = location.latitude.toString() +"  "+ location.longitude.toString(); 
+  getLocationString() async {
+    try {
+      FlutterTrainingHelper flutterTrainingHelper = new FlutterTrainingHelper();
+      var location = await flutterTrainingHelper.getLocation();
+      var locationstring =
+          location.latitude.toString() + "  " + location.longitude.toString();
       return "Location: $locationstring";
-    }
-    catch (e) 
-    {
-        return null;
+    } catch (e) {
+      return null;
     }
   }
-
 }

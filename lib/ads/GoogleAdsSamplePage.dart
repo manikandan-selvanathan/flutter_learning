@@ -11,9 +11,8 @@
 //   _GoogleAdsSamplePageState createState() => _GoogleAdsSamplePageState();
 // }
 
-
 // class _GoogleAdsSamplePageState extends State<GoogleAdsSamplePage> {
- 
+
 //   Ads ads;
 //   final int initOption=1;
 //   int _coins = 0;

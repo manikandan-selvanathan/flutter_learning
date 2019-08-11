@@ -9,39 +9,33 @@ class WebViewSamplePage extends StatefulWidget {
   _WebViewSamplePageState createState() => _WebViewSamplePageState();
 }
 
-
 class _WebViewSamplePageState extends State<WebViewSamplePage> {
   WebViewController _controller;
-  Logger logger=Logger();
+  Logger logger = Logger();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body:
-        Stack(
-         children: <Widget>[
-           WebView
-             (
-               initialUrl: 'http://google.in',
-               javascriptMode: JavascriptMode.unrestricted,
-               onWebViewCreated: (WebViewController webViewController) {
-                 _controller = webViewController;
-                 
-               },
-               onPageFinished: (url){
-                    logger.i("Page Loaded: "+url);
-                     _controller.evaluateJavascript("console.log('Hello')"); 
-               },
-               debuggingEnabled: true,
-           ),
-           RaisedButton(
-             child: Text("Open New Page"),
-             onPressed:(){
-               _controller.loadUrl("https://stackoverflow.com/");
-               },
-           )
-         ],
+        body: Stack(
+      children: <Widget>[
+        WebView(
+          initialUrl: 'http://google.in',
+          javascriptMode: JavascriptMode.unrestricted,
+          onWebViewCreated: (WebViewController webViewController) {
+            _controller = webViewController;
+          },
+          onPageFinished: (url) {
+            logger.i("Page Loaded: " + url);
+            _controller.evaluateJavascript("console.log('Hello')");
+          },
+          debuggingEnabled: true,
+        ),
+        RaisedButton(
+          child: Text("Open New Page"),
+          onPressed: () {
+            _controller.loadUrl("https://stackoverflow.com/");
+          },
         )
-
-    );
+      ],
+    ));
   }
 }

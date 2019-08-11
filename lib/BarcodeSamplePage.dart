@@ -7,44 +7,39 @@ class BarcodeSamplePage extends StatefulWidget {
 }
 
 class BarcodeMainPageState extends State<BarcodeSamplePage> {
-  String result="Please scan something";
+  String result = "Please scan something";
 
   Future scanQR() async {
-  try{
-      String qrResult=await BarcodeScanner.scan();
+    try {
+      String qrResult = await BarcodeScanner.scan();
       setState(() {
-        result=qrResult;
+        result = qrResult;
       });
-  }
-  catch(e)
-  {
-
-  }
-
-
+    } catch (e) {}
   }
 
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-          length: 2,
-          child: Scaffold(
-            appBar: AppBar(
-              bottom: TabBar(
-                  tabs: <Widget>[
-                    Tab(child:Icon(Icons.camera)),
-                    Tab(child:Icon(Icons.list))
-                  ]),
-            ),
-            body: TabBarView(children: <Widget>[
-              Center(child:Text(result)),
-              Center(child: Text('2'),)
+        length: 2,
+        child: Scaffold(
+          appBar: AppBar(
+            bottom: TabBar(tabs: <Widget>[
+              Tab(child: Icon(Icons.camera)),
+              Tab(child: Icon(Icons.list))
             ]),
-            floatingActionButton: FloatingActionButton.extended(
-              icon:Icon(Icons.camera),
-              label: Text('Scan'),
-              onPressed: scanQR,
-            ),
-          ));
+          ),
+          body: TabBarView(children: <Widget>[
+            Center(child: Text(result)),
+            Center(
+              child: Text('2'),
+            )
+          ]),
+          floatingActionButton: FloatingActionButton.extended(
+            icon: Icon(Icons.camera),
+            label: Text('Scan'),
+            onPressed: scanQR,
+          ),
+        ));
   }
 }
