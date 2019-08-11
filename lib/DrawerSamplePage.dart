@@ -8,8 +8,8 @@ import 'package:flutter_training/layouts/ListViewSample.dart';
 import 'package:flutter_training/popups/AlertDialogSample.dart';
 import 'package:flutter_training/webview/WebViewSamplePage.dart';
 import 'package:camera/camera.dart';
-
-import '../BarcodeSamplePage.dart';
+import 'BarcodeSamplePage.dart';
+import 'maps/GoogleMapsSamplePage.dart';
 
 class DrawerItem
 {
@@ -55,6 +55,7 @@ class _DrawerSamplePageState extends State<DrawerSamplePage> {
       DrawerItem("Location Service"),
       DrawerItem("Alert Dialog"),
       DrawerItem("WebView"),
+      DrawerItem("Google Maps"),
       DrawerItem("Logger"),
       DrawerItem("Camera")];
     final listview = ListView.builder(itemBuilder: _buildRow,itemCount: listOfMenus.length);
@@ -76,7 +77,7 @@ class _DrawerSamplePageState extends State<DrawerSamplePage> {
   {
     setState(() {
         _selectedDrawerIndex=i;
-         Navigator.of(context).pop(); // close the drawer
+         Navigator.of(context).pop();
     });  
   }
 
@@ -103,9 +104,12 @@ class _DrawerSamplePageState extends State<DrawerSamplePage> {
                return WebViewSamplePage();
         break;
         case 6:
-               return LoggerSamplePage();
+               return GoogleMapsSamplePage();
         break;
         case 7:
+               return LoggerSamplePage();
+        break;
+        case 8:
           return CameraSamplePage();
         break;
          

@@ -32,7 +32,8 @@ dependencies:
   tflite: ^1.0.4
   camera: ^0.5.3
   path_provider: ^1.2.0
-  path:
+  google_maps_flutter: ^0.5.20+2
+  path: ^1.6.4
 
 dev_dependencies:
   flutter_test:

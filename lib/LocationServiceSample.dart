@@ -3,6 +3,8 @@
 import 'package:flutter/material.dart';
 import 'package:location/location.dart';
 
+import 'helper/FlutterTrainingHelper.dart';
+
 class LocationServiceSample extends StatefulWidget {
   @override
   _LocationServiceSampleState createState() => _LocationServiceSampleState();
@@ -21,7 +23,7 @@ class _LocationServiceSampleState extends State<LocationServiceSample> {
           children: <Widget>[
             RaisedButton(
                 onPressed: () {
-                  getLocation().then((onValue) {
+                  getLocationString().then((onValue) {
                     setState(() {
                       _currentLocation = onValue;
                     });
@@ -33,23 +35,19 @@ class _LocationServiceSampleState extends State<LocationServiceSample> {
         )));
   }
 
-String GetLocationString(LocationData locationData)
-{
-    var locationstring = locationData.latitude.toString() +"  "+ locationData.longitude.toString();
-    return "Location: $locationstring";
-}
-  Future<String> getLocation() async {
-    try {
-       var location2 = await _locaiton.getLocation();
-      _locaiton.onLocationChanged().listen((LocationData currentLocation) {
-        setState(() {
-                    _currentLocation = GetLocationString(currentLocation);
-                  });
-      });
-
-      return GetLocationString(location2);
-    } catch (e) {
-      return null;
+  getLocationString() async
+  {
+    try
+    {
+      FlutterTrainingHelper flutterTrainingHelper=new FlutterTrainingHelper();
+      var location=await flutterTrainingHelper.getLocation();
+      var locationstring = location.latitude.toString() +"  "+ location.longitude.toString(); 
+      return "Location: $locationstring";
+    }
+    catch (e) 
+    {
+        return null;
     }
   }
+
 }
