@@ -13,7 +13,7 @@ class ALertDialogSamplePage extends StatelessWidget {
           showDialog(context: context,
           builder: (BuildContext context)
           {
-              return AlertDialog(title: Text("Title"),content: Text("Body"),);
+              return AlertDialog(title: Text("Title"),content: Text("Body"));
           });
         },
         child: Text("Show Alert"))

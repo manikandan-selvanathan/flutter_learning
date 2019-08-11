@@ -15,6 +15,7 @@ import 'animation/AnimatedContainerSamplePage.dart';
 import 'layouts/ImagesFromAssetSamplePage.dart';
 import 'machinelearning/TensorFlowSampleModelPage.dart';
 import 'maps/GoogleMapsSamplePage.dart';
+import 'networkCalls/NetworkCallsSamplePage.dart';
 
 class DrawerItem
 {
@@ -66,7 +67,8 @@ class _DrawerSamplePageState extends State<DrawerSamplePage> {
       DrawerItem("Camera"),
       DrawerItem("Animation Basic"),
       DrawerItem("Images"),
-      DrawerItem("Machine Learning")];
+      DrawerItem("Machine Learning"),
+      DrawerItem("Network Calls")];
     final listview = ListView.builder(itemBuilder: _buildRow,itemCount: listOfMenus.length);
     return listview;
   }
@@ -132,6 +134,8 @@ class _DrawerSamplePageState extends State<DrawerSamplePage> {
         break;
         case 12:
           return TensorFlowSampleModelPage();
+        case 13:
+          return NetworkCallsSamplePage();
         default:
                return WebViewSamplePage();
         break;
