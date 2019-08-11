@@ -1,3 +1,9 @@
+Code Format:
+Visual studio code : Shift+alt+f
+Command Line:
+cd path of lib
+flutter format .
+
 
 Release Build creation:
 

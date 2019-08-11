@@ -5,6 +5,7 @@ import 'package:flutter_training/networkCalls/model/SampleModel.dart';
 import 'package:http/http.dart' as http;
 import 'package:location/location.dart';
 import 'package:logger/logger.dart';
+import 'package:connectivity/connectivity.dart';
 
 class FlutterTrainingHelper {
   Future<LocationData> getLocation() async {
@@ -55,4 +56,21 @@ class FlutterTrainingHelper {
       return null;
     }
   }
+
+  Future<bool> isNetworkConnected() async {
+    var logger = new Logger();
+    bool isConnected = false;
+    try {
+      var connectivity = new Connectivity();
+      var result = await connectivity.checkConnectivity();
+      if (result == ConnectivityResult.wifi ||
+          result == ConnectivityResult.mobile) {
+        isConnected = true;
+      }
+    } catch (e) {
+      logger.e(e);
+    }
+    return isConnected;
+  }
+  
 }

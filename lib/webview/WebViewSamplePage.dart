@@ -2,6 +2,7 @@
 //webview_flutter: ^0.3.10+4
 import 'package:flutter/material.dart';
 import 'package:logger/logger.dart';
+import 'package:progress_dialog/progress_dialog.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 class WebViewSamplePage extends StatefulWidget {
@@ -11,29 +12,55 @@ class WebViewSamplePage extends StatefulWidget {
 
 class _WebViewSamplePageState extends State<WebViewSamplePage> {
   WebViewController _controller;
+  ProgressDialog pr;
   Logger logger = Logger();
+
   @override
-  Widget build(BuildContext context) {
+  void initState() {
+    pr = new ProgressDialog(context, ProgressDialogType.Normal);
+    pr.setMessage("Loading");
+    super.initState();
+  }
+  @override
+  Widget build(BuildContext context) {    
     return Scaffold(
-        body: Stack(
+        body: Column(
       children: <Widget>[
-        WebView(
-          initialUrl: 'http://google.in',
-          javascriptMode: JavascriptMode.unrestricted,
-          onWebViewCreated: (WebViewController webViewController) {
-            _controller = webViewController;
-          },
-          onPageFinished: (url) {
-            logger.i("Page Loaded: " + url);
-            _controller.evaluateJavascript("console.log('Hello')");
-          },
-          debuggingEnabled: true,
-        ),
-        RaisedButton(
-          child: Text("Open New Page"),
-          onPressed: () {
-            _controller.loadUrl("https://stackoverflow.com/");
-          },
+        Expanded(
+            flex: 9,
+            child: WebView(
+              initialUrl: 'http://google.in',
+              javascriptMode: JavascriptMode.unrestricted,
+              onWebViewCreated: (WebViewController webViewController) {
+                _controller = webViewController;
+                 pr.show();
+              },
+              onPageFinished: (url) {
+                pr.hide();
+                logger.i("Page Loaded: " + url);
+                _controller.evaluateJavascript("console.log('Hello')");
+              },
+              navigationDelegate: (action) {
+                logger.i(action.url);
+                if (action.url ==
+                    "https://stackoverflow.com/users/login?ssrc=head&returnurl=https%3a%2f%2fstackoverflow.com%2f") {
+                  return NavigationDecision.prevent;
+                } else {
+                  pr.show();
+                  return NavigationDecision.navigate;
+                }
+              },
+              debuggingEnabled: true,
+            )),
+        Expanded(
+          flex: 1,
+          child: RaisedButton(
+            child: Text("Open StackOverFlowPage"),
+            onPressed: () {
+              pr.show();
+              _controller.loadUrl("https://stackoverflow.com/");
+            },
+          ),
         )
       ],
     ));

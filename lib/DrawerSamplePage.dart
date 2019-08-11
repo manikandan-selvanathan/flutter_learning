@@ -4,6 +4,7 @@ import 'package:flutter_training/LoggerSamplePage.dart';
 import 'package:flutter_training/ads/GoogleAdsSamplePage.dart';
 import 'package:flutter_training/camera/CameraSamplePage.dart';
 import 'package:flutter_training/customFont/CustomFontSamplePage.dart';
+import 'package:flutter_training/helper/FlutterTrainingHelper.dart';
 import 'package:flutter_training/layouts/LayoutSample.dart';
 import 'package:flutter_training/layouts/ListViewSample.dart';
 import 'package:flutter_training/popups/AlertDialogSample.dart';
@@ -31,6 +32,11 @@ class _DrawerSamplePageState extends State<DrawerSamplePage> {
   int _selectedDrawerIndex = 0;
   List<DrawerItem> listOfMenus;
 
+  @override
+  void initState() {
+    
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
