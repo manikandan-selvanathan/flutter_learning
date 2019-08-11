@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_training/LocationServiceSample.dart';
 import 'package:flutter_training/LoggerSamplePage.dart';
+import 'package:flutter_training/ads/GoogleAdsSamplePage.dart';
 import 'package:flutter_training/camera/CameraSamplePage.dart';
 import 'package:flutter_training/customFont/CustomFontSamplePage.dart';
 import 'package:flutter_training/layouts/LayoutSample.dart';
@@ -9,6 +10,10 @@ import 'package:flutter_training/popups/AlertDialogSample.dart';
 import 'package:flutter_training/webview/WebViewSamplePage.dart';
 import 'package:camera/camera.dart';
 import 'BarcodeSamplePage.dart';
+import 'PageRedirection.dart';
+import 'animation/AnimatedContainerSamplePage.dart';
+import 'layouts/ImagesFromAssetSamplePage.dart';
+import 'machinelearning/TensorFlowSampleModelPage.dart';
 import 'maps/GoogleMapsSamplePage.dart';
 
 class DrawerItem
@@ -57,7 +62,11 @@ class _DrawerSamplePageState extends State<DrawerSamplePage> {
       DrawerItem("WebView"),
       DrawerItem("Google Maps"),
       DrawerItem("Logger"),
-      DrawerItem("Camera")];
+      DrawerItem("Page Navigation"),
+      DrawerItem("Camera"),
+      DrawerItem("Animation Basic"),
+      DrawerItem("Images"),
+      DrawerItem("Machine Learning")];
     final listview = ListView.builder(itemBuilder: _buildRow,itemCount: listOfMenus.length);
     return listview;
   }
@@ -110,9 +119,19 @@ class _DrawerSamplePageState extends State<DrawerSamplePage> {
                return LoggerSamplePage();
         break;
         case 8:
+          return LoginPage();
+        break;
+        case 9:
           return CameraSamplePage();
         break;
-         
+        case 10:
+          return AnimatedContainerSamplePage();
+        break;
+        case 11:
+          return ImagesFromSamplePage();
+        break;
+        case 12:
+          return TensorFlowSampleModelPage();
         default:
                return WebViewSamplePage();
         break;

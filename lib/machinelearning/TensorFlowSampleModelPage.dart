@@ -21,7 +21,7 @@ class _TensorFlowSampleModelPageState extends State<TensorFlowSampleModelPage> {
     var logger=Logger();
     try
     {
-        String res = await Tflite.loadModel(model: "assets/model.tflite",numThreads: 1 );
+        String res = await Tflite.loadModel(model: "assets/tensorflowmodels/model.tflite",numThreads: 1 );
         logger.d(res);
     }
     catch(e)

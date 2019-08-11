@@ -9,7 +9,7 @@ class ImagesFromSamplePage extends StatefulWidget {
 
 class _ImagesFromSamplePageState extends State<ImagesFromSamplePage> {
   
-  String _imageSource="images/1.jpg";
+  String _imageSource="assets/images/1.jpg";
   var lastImageSource;
 
 @override
@@ -20,11 +20,10 @@ class _ImagesFromSamplePageState extends State<ImagesFromSamplePage> {
   @override
   Widget build(BuildContext context) {
   //Image.network("https://images.pexels.com/photos/356378/pexels-photo-356378.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",height: 100,width: 100);
-  //Image.asset("images/1.jpg");
-  //FadeInImage.assetNetwork(placeholder: "images/loading_placeholder.png", image: "https://images.pexels.com/photos/356378/pexels-photo-356378.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500")
+  //Image.asset("assets/images/1.jpg");
+  //FadeInImage.assetNetwork(placeholder: "assets/images/loading_placeholder.png", image: "https://images.pexels.com/photos/356378/pexels-photo-356378.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500")
 
     return Scaffold(
-      appBar: AppBar(title: Text('Image Sample')),
       body:Center(
         child: Column(
           children: <Widget>[
@@ -49,10 +48,10 @@ class _ImagesFromSamplePageState extends State<ImagesFromSamplePage> {
                   }
                 }
                 setState(() {
-                  _imageSource="images/"+rand.toString()+".jpg";
+                  _imageSource="assets/images/"+rand.toString()+".jpg";
                 });
               }),
-            FadeInImage.assetNetwork( height: 250,width: 250, placeholder: "images/loading_placeholder.png", image: "https://images.pexels.com/photos/356378/pexels-photo-356378.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500")
+            FadeInImage.assetNetwork( height: 250,width: 250, placeholder: "assets/images/loading_placeholder.png", image: "https://images.pexels.com/photos/356378/pexels-photo-356378.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500")
           ],
         ),
       )

@@ -23,6 +23,7 @@ class _GoogleMapsSamplePageState extends State<GoogleMapsSamplePage> {
       FlutterTrainingHelper flutterTrainingHelper=new FlutterTrainingHelper();
       flutterTrainingHelper.getLocation().then((loc)
       {
+        
         setState(() 
         {
              position=new CameraPosition(
@@ -33,6 +34,7 @@ class _GoogleMapsSamplePageState extends State<GoogleMapsSamplePage> {
       });
       super.initState();
   }
+ 
 
   @override
   Widget build(BuildContext context) 

@@ -17,7 +17,7 @@ class _AnimatedContainerSamplePageState extends State<AnimatedContainerSamplePag
               AnimatedContainer(
               height: height,
               color: bgColor,
-              curve: Curves.bounceInOut,
+              curve: Curves.easeOutCubic,
               duration:Duration(seconds: 3)
             ),
             RaisedButton(child: Text("Animate the Container"),
