@@ -21,8 +21,9 @@ class _WebViewSamplePageState extends State<WebViewSamplePage> {
     pr.setMessage("Loading");
     super.initState();
   }
+
   @override
-  Widget build(BuildContext context) {    
+  Widget build(BuildContext context) {
     return Scaffold(
         body: Column(
       children: <Widget>[
@@ -33,7 +34,7 @@ class _WebViewSamplePageState extends State<WebViewSamplePage> {
               javascriptMode: JavascriptMode.unrestricted,
               onWebViewCreated: (WebViewController webViewController) {
                 _controller = webViewController;
-                 pr.show();
+                pr.show();
               },
               onPageFinished: (url) {
                 pr.hide();
