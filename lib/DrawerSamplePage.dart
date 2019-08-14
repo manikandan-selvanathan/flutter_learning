@@ -40,7 +40,7 @@ class _DrawerSamplePageState extends State<DrawerSamplePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(tit  le: Text("Flutter Training Sample Snippets")),
+      appBar: AppBar(title: Text("Flutter Training Sample Snippets")),
       drawer: new Drawer(
         child: new Column(
           children: <Widget>[
