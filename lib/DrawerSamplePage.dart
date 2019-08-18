@@ -4,6 +4,7 @@ import 'package:flutter_training/LoggerSamplePage.dart';
 import 'package:flutter_training/ads/GoogleAdsSamplePage.dart';
 import 'package:flutter_training/camera/CameraSamplePage.dart';
 import 'package:flutter_training/customFont/CustomFontSamplePage.dart';
+import 'package:flutter_training/custompaint/CustomPaintingSamplePage.dart';
 import 'package:flutter_training/helper/FlutterTrainingHelper.dart';
 import 'package:flutter_training/layouts/LayoutSample.dart';
 import 'package:flutter_training/layouts/ListViewSample.dart';
@@ -77,7 +78,8 @@ class _DrawerSamplePageState extends State<DrawerSamplePage> {
       DrawerItem("Animation Basic"),
       DrawerItem("Images"),
       DrawerItem("Machine Learning"),
-      DrawerItem("Network Calls")
+      DrawerItem("Network Calls"),
+      DrawerItem("Custom Paint")
     ];
     final listview =
         ListView.builder(itemBuilder: _buildRow, itemCount: listOfMenus.length);
@@ -142,6 +144,8 @@ class _DrawerSamplePageState extends State<DrawerSamplePage> {
         return TensorFlowSampleModelPage();
       case 13:
         return NetworkCallsSamplePage();
+        case 14:
+        return CustomPaintingSamplePage();
       default:
         return WebViewSamplePage();
         break;
