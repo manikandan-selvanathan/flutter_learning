@@ -26,7 +26,7 @@ class LoggerSamplePage extends StatelessWidget {
               }
             },
             child: Text("Log Message")),
-        Text("See the logs in Debug Consold - Visual studio code")
+        Text("See the logs in Debug Console - Visual studio code")
       ],
     )));
   }
