@@ -10,12 +10,11 @@ class CustomPaintingSamplePage extends StatefulWidget {
 class _CustomPaintingSamplePageState extends State<CustomPaintingSamplePage> {
   @override
   Widget build(BuildContext context) {
-    return Center(child:Container(
-      height: 200,
-      width: 200,
-      child: CustomPaint(foregroundPainter: StartAndEnd(start:"Chennai, India",end:"Sault Ste Marie, Canada")) ,
-      //child: CustomPaint(foregroundPainter: new PathExample()),
-    ));
+    return Center(child:Column( 
+      children: <Widget>[
+      Container(height:200,width:200,child:CustomPaint(foregroundPainter: StartAndEnd(start:"Chennai, India",end:"Sault Ste Marie, Canada"))),
+      Container(height:200,width:200,child:CustomPaint(foregroundPainter: new PathExample()))
+      ]));
   }
 }
 
