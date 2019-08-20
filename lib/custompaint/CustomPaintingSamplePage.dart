@@ -13,7 +13,7 @@ class _CustomPaintingSamplePageState extends State<CustomPaintingSamplePage> {
     return Center(child:Column( 
       children: <Widget>[
       Container(height:200,width:200,child:CustomPaint(foregroundPainter: StartAndEnd(start:"Chennai, India",end:"Sault Ste Marie, Canada"))),
-      Container(height:200,width:200,child:CustomPaint(foregroundPainter: new PathExample()))
+      CustomPaint(foregroundPainter: new PathExample())
       ]));
   }
 }

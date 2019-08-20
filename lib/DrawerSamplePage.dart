@@ -9,6 +9,7 @@ import 'package:flutter_training/helper/FlutterTrainingHelper.dart';
 import 'package:flutter_training/layouts/LayoutSample.dart';
 import 'package:flutter_training/layouts/ListViewSample.dart';
 import 'package:flutter_training/popups/AlertDialogSample.dart';
+import 'package:flutter_training/sharedpreference/SharedPreferenceSamplePage.dart';
 import 'package:flutter_training/webview/WebViewSamplePage.dart';
 import 'package:camera/camera.dart';
 import 'BarcodeSamplePage.dart';
@@ -79,7 +80,8 @@ class _DrawerSamplePageState extends State<DrawerSamplePage> {
       DrawerItem("Images"),
       DrawerItem("Machine Learning"),
       DrawerItem("Network Calls"),
-      DrawerItem("Custom Paint")
+      DrawerItem("Custom Paint"),
+      DrawerItem("Shared Preference")
     ];
     final listview =
         ListView.builder(itemBuilder: _buildRow, itemCount: listOfMenus.length);
@@ -144,8 +146,10 @@ class _DrawerSamplePageState extends State<DrawerSamplePage> {
         return TensorFlowSampleModelPage();
       case 13:
         return NetworkCallsSamplePage();
-        case 14:
+      case 14:
         return CustomPaintingSamplePage();
+      case 15:
+        return SharedPreferenceSamplePage();
       default:
         return WebViewSamplePage();
         break;
