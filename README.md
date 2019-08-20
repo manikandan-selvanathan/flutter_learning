@@ -20,5 +20,6 @@ This project is a starting point for a Flutter basic examples of widgets and ser
 -Logger  
 -Page Redirections  
 -Animation Basics  
+-Shared Preferences  
 
  
